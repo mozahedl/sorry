@@ -1,0 +1,237 @@
+!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>I'm So Sorry</title>
+
+    <style>
+
+        body {
+
+            background-color: #ffe6e6;
+
+            font-family: 'Arial', sans-serif;
+
+            text-align: center;
+
+            padding: 50px 20px;
+
+            color: #d63031;
+
+            margin: 0;
+
+            height: 100vh;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            overflow: hidden;
+
+        }
+
+        h1 {
+
+            font-size: 2.2rem;
+
+            margin-bottom: 10px;
+
+        }
+
+        p {
+
+            font-size: 1.1rem;
+
+            color: #636e72;
+
+            margin-bottom: 30px;
+
+        }
+
+        .card {
+
+            background: white;
+
+            padding: 30px 20px;
+
+            border-radius: 20px;
+
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+
+            max-width: 400px;
+
+            width: 100%;
+
+            position: relative;
+
+        }
+
+        .btn-container {
+
+            display: flex;
+
+            justify-content: center;
+
+            gap: 20px;
+
+            margin-top: 20px;
+
+            position: relative;
+
+            height: 60px;
+
+        }
+
+        .btn-yes {
+
+            background-color: #00b894;
+
+            color: white;
+
+            border: none;
+
+            padding: 12px 25px;
+
+            font-size: 1rem;
+
+            border-radius: 25px;
+
+            cursor: pointer;
+
+            font-weight: bold;
+
+            z-index: 10;
+
+        }
+
+        .btn-no {
+
+            background-color: #ff7675;
+
+            color: white;
+
+            border: none;
+
+            padding: 12px 25px;
+
+            font-size: 1rem;
+
+            border-radius: 25px;
+
+            cursor: pointer;
+
+            position: fixed; /* স্ক্রিনের যেকোনো জায়গায় সরানোর জন্য fixed করা হলো */
+
+            font-weight: bold;
+
+            transition: 0.15s ease-out; /* স্মুথ ও দ্রুত সরার জন্য */
+
+            z-index: 100;
+
+        }
+
+        #message {
+
+            font-size: 1.5rem;
+
+            margin-top: 20px;
+
+            font-weight: bold;
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+
+
+    <div class="card">
+
+        <h1>I'm So Sorry </h1>
+
+        <p>Please forgive me.</p>
+
+        
+
+        <div class="btn-container">
+
+            <button class="btn-yes" onclick="accepted()" I need time❤️</button>
+
+            <!-- কোনো ডিভাইসে টাচ বা মাউস নিলে যেন সরে যায় -->
+
+            <button class="btn-no" id="noBtn" onmouseover="moveButton()" ontouchstart="moveButton()">No,I won't</button>
+
+        </div>
+
+
+
+        <div id="message"></div>
+
+    </div>
+
+
+
+    <script>
+
+        function moveButton() {
+
+            const btn = document.getElementById('noBtn');
+
+            
+
+            // স্ক্রিনের উইডথ ও হাইট হিসাব করে সেফ জোনের মধ্যে র্যান্ডম পজিশন তৈরি
+
+            const padding = 100;
+
+            const maxX = window.innerWidth - btn.offsetWidth - padding;
+
+            const maxY = window.innerHeight - btn.offsetHeight - padding;
+
+            
+
+            const randomX = Math.max(padding, Math.floor(Math.random() * maxX));
+
+            const randomY = Math.max(padding, Math.floor(Math.random() * maxY));
+
+            
+
+            btn.style.left = randomX + 'px';
+
+            btn.style.top = randomY + 'px';
+
+        }
+
+
+
+        function accepted() {
+
+            document.querySelector('.card').innerHTML = `
+
+                <h1>Yayyy! 🎉</h1>
+
+                <p>I Love you so much.I know only love alone is not enough to make things workout.It all started because of my misunderstanding and rudeness.I will not use my illness as any excuse.I am responsible for where we are standing now.I really don't know what is wrong with me.But i want you to know that hurting you is never my intention.I myself get hurt after everything i say to you in those jhogras.I won't say that forgive me easily.Shape me as you want.Punish me if you want.But make me yours forever.I mean everything though I hadn't said much.But deep down I know how much it hurts.Compared to how much hurt you are,mine is nothing.But still..all i can do is asking for your forgiveness.I am so much sorry love.I really am very sorry.I hope one day you'll forgive me</p>
+
+            `;
+
+            // রাজি হয়ে গেলে "না" বাটনটি পুরোপুরি লুকিয়ে ফেলা
+
+            document.getElementById('noBtn').style.display = 'none';
+
+        }
+
+    </script>
+
+</body>
+
+</ html>
